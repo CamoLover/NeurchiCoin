@@ -13,9 +13,21 @@
   
   /* Global Styles */
   body {
-    background-color: #f2f2f2;
+    background-image: url("Background.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    backdrop-filter: brightness(50%);
+    background-color: #8C8D8C;
     font-size: 18px;
   }
+
+a {
+  color: #fff;
+}
+a:hover {
+  color: #F9D865;
+}
+
 h3{
   text-align: center;
 }
@@ -183,13 +195,19 @@ h2 {
   }
   
   main h3 {
-    color: #0c273d;
+    color: #ffffff;
     font-size: 28px;
+    font-weight: bold;
+  }
+
+  main h1 {
+    color: #ffffff;
+    font-size: 32px;
     font-weight: bold;
   }
   
   main p {
-    color: #5e5e5e;
+    color: #d8d8d8;
     margin-top: 20px;
   }
   
@@ -234,12 +252,13 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #ddd;
+  background-color: #F9D865;
   border-radius: 10px;
   padding: 10px;
   width: 150px;
   height: 80px;
   margin-bottom: 10px;
+  color: #000000;
 }
 
 .box i {

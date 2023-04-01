@@ -12,14 +12,14 @@
 
 		$(document).ready(function() {
             $.get('https://api.bscscan.com/api?module=stats&action=tokenCsupply&contractaddress=0xed15fcf9b940b47a7aa9efad73573c54286cbd48&apikey=', function(data) {
-					var circu = (data.result / 1000000000000000000).toFixed(1);
+					var circu = (data.result / 1000000000000000000).toLocaleString();
 					$('#circu').text(circu);
 				});
                 $.ajax({
                   url: 'https://deep-index.moralis.io/api/v2/erc20/0xeD15fcf9b940b47A7aA9EfAd73573c54286cbD48/price?chain=bsc&exchange=pancakeswap-v2',
                   headers: {
                     'accept': 'application/json',
-                    'X-API-Key': ''
+                    'X-API-Key': 'zVxRt34dLeV9zizaqAcdMb0cDy0x1UB82scV3IhgsnaBjH7q8ddhHJmk0SUeJ6Qd'
                   },
                   method: 'GET',
                   dataType: 'json',
@@ -29,8 +29,8 @@
                   }
                 });
                 $.get('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xed15fcf9b940b47a7aa9efad73573c54286cbd48&apikey=', function(data) {
-					var appro = (data.result / 1000000000000000000).toFixed(1);
-					$('#appro').text(appro);
+					          var appro = (data.result / 1000000000000000000).toLocaleString();
+					          $('#appro').text(appro);
                     $('#marketcap').text(appro * price);
 				});
 		});
@@ -54,7 +54,6 @@
               <li><a id="nav-link" href="about.html">A propos</a></li>
             </ul>
         </section>
-
 	<div id="wrapper">
 		<main>
 			<h1>NEURCHI Coin</h1>
@@ -69,13 +68,13 @@
                   <div class="col">
                     <div class="box">
                       <i class="fa fa-home"></i>
-                      <span>Price : <br><p id="price"></p></span>
+                      <span>Price : <br><p id="price" style="color: black;"></p></span>
                     </div>
                   </div>
                   <div class="col">
                     <div class="box">
                       <i class="fa fa-user"></i>
-                      <span>MarketCap : <br><p id="marketcap"></p></span>
+                      <span>MarketCap : <br><p id="marketcap" style="color: black;"></p></span>
                     </div>
                   </div>
                 </div>
@@ -83,13 +82,13 @@
                     <div class="col">
                       <div class="box">
                         <i class="fa fa-globe"></i>
-                        <span>In use :<br><p id="circu"></p></span>
+                        <span>In use :<br><p id="circu" style="color: black;"></p></span>
                       </div>
                     </div>
                     <div class="col">
                       <div class="box">
                         <i class="fa fa-shopping-cart"></i>
-                        <span>Supply :<br><p id="appro"></p></span>
+                        <span>Supply :<br><p id="appro" style="color: black;"></p></span>
                       </div>
                     </div>
                   </div>
