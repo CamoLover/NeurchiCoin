@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NEURCHI Coin</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xed15fcf9b940b47a7aa9efad73573c54286cbd48&apikey="></script>
+	<script>
+
+
+		$(document).ready(function() {
+                $.ajax({
+                  url: 'https://deep-index.moralis.io/api/v2/erc20/0xeD15fcf9b940b47A7aA9EfAd73573c54286cbD48/price?chain=bsc&exchange=pancakeswap-v2',
+                  headers: {
+                    'accept': 'application/json',
+                    'X-API-Key': ''
+                  },
+                  method: 'GET',
+                  dataType: 'json',
+                  success: function(data) {
+                    var price = (data.usdPrice).toFixed(17);
+                    $('#price').text('Token price :' + price + '$');
+                  }
+                });
+
+            
+		});
+	</script>
+    
+
+</head>
+<body>
+        <section class="top-nav">
+            <div>
+                <img src="https://imgs.search.brave.com/5-PX64FzA5GhJgmrrHu-37ah-zHXWgFD8Eed7rwP6ZQ/rs:fit:515:484:1/g:ce/aHR0cHM6Ly90aGUt/cGl4ZWxldXIueWou/ZnIvSU1HL01FRElB/Uy9uZXVyY2hpY29p/bi5wbmc" alt="NEURCHI Coin Logo" width="48" height="48"/>
+            </div>
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+          </label>
+            <ul class="menu">
+              <li><a id="nav-link" href="index.html">Home</a></li>
+              <li><a id="nav-link" href="pricetracker.html">Prix et calculateur</a></li>
+              <li><a id="nav-link" href="holder.html">HODLERS</a></li>
+              <li><a id="nav-link" href="about.html">A propos</a></li>
+            </ul>
+        </section>
+
+    <footer>
+        <p>&copy; 2021 NeurchiCoin | Paraxe Paradise</p>
+		<br><br>
+		<p>Si vous voulez me faire un don : <p id="contract">0x10e6cd9E2272BaC1b40746F99d9F24daA8f98457</p></p>
+    </footer>
+</body>
+</html>
