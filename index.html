@@ -5,43 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xed15fcf9b940b47a7aa9efad73573c54286cbd48&apikey="></script>
-	<script>
-
-
-		$(document).ready(function() {
-            $.get('https://api.bscscan.com/api?module=stats&action=tokenCsupply&contractaddress=0xed15fcf9b940b47a7aa9efad73573c54286cbd48&apikey=', function(data) {
-					var circu = (data.result / 1000000000000000000).toLocaleString();
-					$('#circu').text(circu);
-				});
-                $.ajax({
-                  url: 'https://deep-index.moralis.io/api/v2/erc20/0xeD15fcf9b940b47A7aA9EfAd73573c54286cbD48/price?chain=bsc&exchange=pancakeswap-v2',
-                  headers: {
-                    'accept': 'application/json',
-                    'X-API-Key': 'zVxRt34dLeV9zizaqAcdMb0cDy0x1UB82scV3IhgsnaBjH7q8ddhHJmk0SUeJ6Qd'
-                  },
-                  method: 'GET',
-                  dataType: 'json',
-                  success: function(data) {
-                    var price = (data.usdPrice).toFixed(17);
-                    $('#price').text(price + '$');
-                  }
-                });
-                $.get('https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=0xed15fcf9b940b47a7aa9efad73573c54286cbd48&apikey=', function(data) {
-					          var appro = (data.result / 1000000000000000000).toLocaleString();
-					          $('#appro').text(appro);
-                    $('#marketcap').text(appro * price);
-				});
-		});
-	</script>
-    
-
+	<script src="index.js"></script>
 </head>
 <body>
         <section class="top-nav">
             <div>
-                <img src="https://imgs.search.brave.com/5-PX64FzA5GhJgmrrHu-37ah-zHXWgFD8Eed7rwP6ZQ/rs:fit:515:484:1/g:ce/aHR0cHM6Ly90aGUt/cGl4ZWxldXIueWou/ZnIvSU1HL01FRElB/Uy9uZXVyY2hpY29p/bi5wbmc" alt="NEURCHI Coin Logo" width="48" height="48"/>
+                <img src="logo.png" alt="NEURCHI Coin Logo" width="48" height="48"/>
             </div>
             <input id="menu-toggle" type="checkbox" />
             <label class='menu-button-container' for="menu-toggle">
@@ -79,19 +51,27 @@
                   </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                      <div class="box">
-                        <i class="fa fa-globe"></i>
-                        <span>In use :<br><p id="circu" style="color: black;"></p></span>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="box">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span>Supply :<br><p id="appro" style="color: black;"></p></span>
-                      </div>
+                  <div class="col">
+                    <div class="box">
+                      <i class="fa fa-globe"></i>
+                      <span>In use :<br><p id="circu" style="color: black;"></p></span>
                     </div>
                   </div>
+                  <div class="col">
+                    <div class="box">
+                      <i class="fa fa-shopping-cart"></i>
+                      <span>Supply :<br><p id="appro" style="color: black;"></p></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="box">
+                      <i class="fa fa-globe"></i>
+                      <span>Transfer :<br><p id="transfer" style="color: black;"></p></span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
 
